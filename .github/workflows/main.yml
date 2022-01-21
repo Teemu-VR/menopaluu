@@ -59,20 +59,6 @@ jobs:
         shell: bash
         run: rm ./.npmrc
 
-      # Push to your pages repo
-      # - name: Push to pages repo
-      #   uses: cpina/github-action-push-to-another-repository@main
-      #   env:
-      #     API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-      #   with:
-      #     source-directory: 'dist'
-      #     destination-github-username: ${{ env.githubUserOrOrg }}
-      #     destination-repository-name: ${{ env.deployToRepo }}
-      #     user-email: ${{ env.githubEmail }}
-      #     commit-message: Deploy ORIGIN_COMMIT
-      #     target-branch: gh-pages
-      #     target-directory: 'docs'
-
       - name: Deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@v4.2.2
         with:
