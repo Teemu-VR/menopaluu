@@ -30,12 +30,12 @@ jobs:
         shell: bash
         run: |
           cat > ./.npmrc << EOF
+          @vr-core:registry=https://vrartifactory.eficode.com/api/npm/channel-core-npm/
           //vrartifactory.eficode.com/api/npm/channel-core-npm/:_password=\${ARTIFACTORY_PASSWORD}
           //vrartifactory.eficode.com/api/npm/channel-core-npm/:username=\${ARTIFACTORY_USERNAME}
-          //vrartifactory.eficode.com/api/npm/channel-core-npm/:_authToken=\${ARTIFACTORY_AUTH_TOKEN}
-          //vrartifactory.eficode.com/api/npm/channel-core-npm/:always-auth=true
           //vrartifactory.eficode.com/api/npm/channel-core-npm/:email=\${ARTIFACTORY_EMAIL}
-          @vr-core:registry=https://vrartifactory.eficode.com/api/npm/channel-core-npm/
+          //vrartifactory.eficode.com/api/npm/channel-core-npm/:always-auth=true
+          //vrartifactory.eficode.com/api/npm/channel-core-npm/:_authToken=\${ARTIFACTORY_AUTH_TOKEN}
           EOF
 
       # Install dependencies with npm
