@@ -4,7 +4,8 @@
 env:
   # When changing email remember to add API_TOKEN_GITHUB in repo Settings > Secrets as well!
   githubEmail: vesa.piittinen@gmail.com
-  deployToRepo: vr-digital-crew-aikajana.github.io/menopaluu
+  githubUserOrOrg: vr-digital-crew-aikajana
+  deployToRepo: menopaluu
 
 name: Github Pages Astro CI
 
@@ -60,12 +61,12 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           source-directory: 'dist'
-          destination-github-username: ${{ github.actor }}
+          destination-github-username: ${{ env.githubUserOrOrg }}
           destination-repository-name: ${{ env.deployToRepo }}
           user-email: ${{ env.githubEmail }}
           commit-message: Deploy ORIGIN_COMMIT
           target-branch: gh-pages
-      
+
       - name: Cleanup .npmrc file
         if: always()
         shell: bash
