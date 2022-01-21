@@ -66,6 +66,7 @@ jobs:
           user-email: ${{ env.githubEmail }}
           commit-message: Deploy ORIGIN_COMMIT
           target-branch: gh-pages
+          target-directory: 'docs'
 
       - name: Cleanup .npmrc file
         if: always()
