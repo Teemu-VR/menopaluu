@@ -30,6 +30,8 @@ jobs:
         shell: bash
         run: |
           cat > ./.npmrc << EOF
+          //vrartifactory.eficode.com/api/npm/channel-core-npm/:_password=\${ARTIFACTORY_PASSWORD}
+          //vrartifactory.eficode.com/api/npm/channel-core-npm/:username=\${ARTIFACTORY_USERNAME}
           //vrartifactory.eficode.com/api/npm/channel-core-npm/:_authToken=\${ARTIFACTORY_AUTH_TOKEN}
           //vrartifactory.eficode.com/api/npm/channel-core-npm/:always-auth=true
           //vrartifactory.eficode.com/api/npm/channel-core-npm/:email=\${ARTIFACTORY_EMAIL}
