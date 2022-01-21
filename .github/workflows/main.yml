@@ -41,6 +41,11 @@ jobs:
       # Install dependencies with npm
       - name: Install dependencies
         run: npm ci
+        env:
+          ARTIFACTORY_AUTH_TOKEN: ${{ secrets.ARTIFACTORY_AUTH_TOKEN }}
+          ARTIFACTORY_EMAIL: ${{ secrets.ARTIFACTORY_EMAIL }}
+          ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
+          ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
 
       # Build the project and add .nojekyll file to supress default behaviour
       - name: Build
@@ -60,3 +65,8 @@ jobs:
           user-email: ${{ env.githubEmail }}
           commit-message: Deploy ORIGIN_COMMIT
           target-branch: gh-pages
+      
+      - name: Cleanup .npmrc file
+        if: always()
+        shell: bash
+        run: rm ./.npmrc
