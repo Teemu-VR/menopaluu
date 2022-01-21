@@ -26,6 +26,16 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Copy over .npmrc file
+        shell: bash
+        run: |
+          cat > ./.npmrc << EOF
+          //vrartifactory.eficode.com/api/npm/channel-core-npm/:_authToken=\${ARTIFACTORY_AUTH_TOKEN}
+          //vrartifactory.eficode.com/api/npm/channel-core-npm/:always-auth=true
+          //vrartifactory.eficode.com/api/npm/channel-core-npm/:email=\${ARTIFACTORY_EMAIL}
+          @vr-core:registry=https://vrartifactory.eficode.com/api/npm/channel-core-npm/
+          EOF
+
       # Install dependencies with npm
       - name: Install dependencies
         run: npm ci
