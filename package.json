@@ -5,9 +5,11 @@
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
+		"prebuild": "npm run gen-css-types",
 		"build": "astro build",
 		"preview": "astro preview",
-		"format": "npx prettier -w src"
+		"format": "npx prettier -w src",
+    "gen-css-types": "tcm src"
 	},
 	"devDependencies": {
 		"@types/react": "^17.0.38",
@@ -15,6 +17,7 @@
 		"astro": "^0.22.17",
 		"prettier": "^2.5.1",
 		"prettier-plugin-astro": "^0.0.12",
-		"styled-components": "^5.3.3"
+		"styled-components": "^5.3.3",
+    "typed-css-modules": "^0.7.0"
 	}
 }

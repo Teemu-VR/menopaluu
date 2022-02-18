@@ -1,0 +1,127 @@
+.container {
+	display: grid;
+	grid-template-areas:
+		'timeline image'
+		'timeline content'
+		'timeline accordion';
+	grid-template-columns: 2rem 1fr;
+	margin: 0 -1rem;
+	max-width: 80rem;
+}
+
+.container:first-of-type {
+	margin-top: 2rem;
+}
+
+.timeline {
+	align-items: center;
+	justify-self: center;
+	background: linear-gradient(to bottom, var(--color-green08), var(--color-green08));
+	background-position: 50%;
+	background-repeat: repeat-y;
+	background-size: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	grid-area: timeline;
+	justify-content: flex-start;
+	transform: translateY(4rem);
+	width: 2rem;
+}
+
+.iconCircle {
+	background: white;
+	border-radius: 50%;
+	box-sizing: border-box;
+	color: var(--color-grey10);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: -2px;
+	padding: 0.25rem;
+	position: relative;
+	z-index: 1;
+}
+
+.iconCircle:empty {
+	border: 2px solid var(--color-green08);
+	height: 18px;
+	width: 18px;
+}
+
+.iconCircle:not(:empty) {
+	--default-icon-color: currentColor;
+	box-shadow: 1px 1px 0.25rem var(--color-card-shadow);
+	height: 24px;
+	width: 24px;
+}
+
+.mainBlock {
+	grid-area: content;
+	max-width: calc(100% - 2rem);
+	padding: 4rem 1rem 2rem 2rem;
+}
+
+.imageContainer {
+	align-items: center;
+	display: flex;
+	grid-area: image;
+	justify-content: center;
+	margin: 0;
+	padding: 4rem 1rem 2rem;
+	position: relative;
+	max-width: calc(100% - 4rem);
+}
+
+.imageContainer > * {
+	max-width: 100%;
+}
+
+.accordion {
+	grid-area: accordion;
+}
+
+.container label {
+	user-select: none;
+}
+
+.unchecked {
+}
+.checked {
+}
+
+[type='checkbox']:checked + .container .unchecked,
+[type='checkbox']:not(:checked) + .container .checked {
+	display: none;
+}
+
+[type='checkbox']:checked + .container {
+	background-color: var(--color-grey40);
+}
+
+[type='checkbox']:not(:checked) + .container .accordion {
+	display: none;
+}
+
+@media (min-width: 375px) {
+	.container {
+		grid-template-columns: 4rem 1fr;
+	}
+}
+
+@media (min-width: 768px) {
+	.container {
+		grid-template-areas: 'image timeline content' '. timeline accordion';
+		grid-template-columns: 20rem 32px 1fr;
+		margin: auto;
+	}
+
+	.imageContainer {
+		max-width: unset;
+	}
+}
+
+@media (min-width: 1024px) {
+	.container {
+		grid-template-columns: 30rem 32px 1fr;
+	}
+}

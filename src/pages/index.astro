@@ -1,5 +1,5 @@
 ---
-import { Test } from '../components/Test.tsx'
+import { Article } from './index.tsx'
 ---
 
 <html lang="en">
@@ -23,19 +23,25 @@ import { Test } from '../components/Test.tsx'
 			}
 
 			main {
-				max-width: 50rem;
 				margin: auto;
 				min-height: 100vh;
+			}
+
+			.visually-hidden {
+				clip: rect(1px 1px 1px 1px);
+				height: 1px;
+				opacity: 0.01;
+				overflow: hidden;
+				position: absolute;
+				width: 1px;
+				white-space: nowrap;
+				z-index: -1;
 			}
 		</style>
 	</head>
 	<body>
 		<main>
-			<Test />
-			<h1>Hepskukkuu!</h1>
-			<p>Hei meillä on joku sivu.</p>
-			<p>Jossa on jotain tavaraa, yay.</p>
-			<button class="button green10Button" type="button">Nappula</button>
+			<Article />
 		</main>
 	</body>
 </html>
