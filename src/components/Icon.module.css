@@ -1,0 +1,4 @@
+.icon {
+  --icon-color: var(--default-icon-color, currentColor);
+  color: var(--icon-color);
+}
