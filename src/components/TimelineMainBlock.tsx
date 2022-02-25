@@ -1,4 +1,5 @@
 import React from 'react'
+import { Animate } from './Animate';
 
 import styles from './TimelineMainBlock.module.css'
 
@@ -11,35 +12,33 @@ interface Props {
 }
 
 export function TimelineMainBlock({ children, header, icon, id, image }: Props) {
-	const inputId = `${id}-input`
+	const [open, setOpen] = React.useState(false);
 	const contentId = `${id}-content`
 	const labelId = `${id}-label`
+
+	const container = styles.container + (open ? ` ${styles.containerOpen}` : '')
+
 	return (
-		<>
-			<input aria-hidden className="visually-hidden" id={inputId} type="checkbox" />
-			<div className={styles.container}>
-				<figure className={styles.imageContainer}>{image}</figure>
-				<div className={styles.timeline}>
-					<div className={styles.iconCircle}>{icon}</div>
-				</div>
-				<div className={styles.mainBlock}>
-					{header}
-					<label
-						aria-controls={contentId}
-						className="button"
-						id={labelId}
-						htmlFor={inputId}
-						role="switch"
-						tabIndex={0}
-					>
-						<span className={styles.unchecked}>Näytä lissää</span>
-						<span className={styles.checked}>Näytä vähemmön</span>
-					</label>
-				</div>
-				<div aria-labelledby={labelId} className={styles.accordion}>
-					<div className={styles.accordionContent}>{children}</div>
-				</div>
+		<div className={container}>
+			<figure className={styles.imageContainer}>{image}</figure>
+			<div className={styles.timeline}>
+				<div className={styles.iconCircle}>{icon}</div>
 			</div>
-		</>
+			<div className={styles.mainBlock}>
+				{header}
+				<button
+					aria-controls={contentId}
+					className="button"
+					id={labelId}
+					onClick={() => setOpen(open => !open)}
+					tabIndex={0}
+				>
+					{open ? 'Vähempi' : 'Enempi'}
+				</button>
+			</div>
+			<div aria-labelledby={labelId} className={styles.accordion}>
+				<Animate open={open}>{children}</Animate>
+			</div>
+		</div>
 	)
 }

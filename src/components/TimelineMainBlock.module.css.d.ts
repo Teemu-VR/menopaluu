@@ -5,8 +5,7 @@ declare const styles: {
   readonly "mainBlock": string;
   readonly "imageContainer": string;
   readonly "accordion": string;
-  readonly "unchecked": string;
-  readonly "checked": string;
+  readonly "containerOpen": string;
 };
 export = styles;
 

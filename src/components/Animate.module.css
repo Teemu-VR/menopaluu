@@ -1,0 +1,33 @@
+.container {
+  --animate-height: 250ms;
+  --animate-opacity: 375ms;
+  overflow: hidden;
+  width: 100%;
+  transition: height var(--animate-height) ease-in-out, visibility 0s;
+  visibility: visible;
+}
+
+.container[aria-hidden="true" i] {
+  transition: height var(--animate-height) ease-in-out, visibility 0s linear var(--animate-height);
+  visibility: hidden;
+}
+
+.content {
+  contain: layout;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity var(--animate-opacity) ease-in-out, transform var(--animate-height) ease-in-out;
+}
+
+.container[aria-hidden="true" i] > .content {
+  opacity: 0;
+  transform: translateY(-20%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .container,
+  .content {
+    transform: unset !important;
+    transition: none !important;
+  }
+}
