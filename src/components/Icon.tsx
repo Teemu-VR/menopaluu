@@ -1,6 +1,4 @@
 import React from 'react'
-import { default as VRLogo } from '@vr-core/web-components/icons/VRLogo.svg'
-import { default as TrainDetailed } from '@vr-core/web-components/icons/TrainDetailed.svg'
 
 import styles from './Icon.module.css'
 
@@ -17,5 +15,5 @@ export const Icon = ({ size = 1.5, src }: Props) => (
 
 interface IconProps extends Omit<Props, 'src'> {}
 
-export const TrainDetailedIcon = (props: IconProps) => <Icon {...props} src={TrainDetailed} />
-export const VRLogoIcon = (props: IconProps) => <Icon {...props} src={VRLogo} />
+export const TrainDetailedIcon = (props: IconProps) => <Icon {...props} src="/assets/icons/TrainDetailed.svg" />
+export const VRLogoIcon = (props: IconProps) => <Icon {...props} src="/assets/icons/VRLogo.svg" />

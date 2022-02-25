@@ -1,0 +1,6 @@
+<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" id="icon">
+    <g fill="none" fill-rule="evenodd">
+        <path d="M0 0h48v48H0z"/>
+        <path d="M16 32v12H4V32h12zm16-12v12h-8v8h4v4h-8V28h8v-8h4zm12 16v8h-4v-4h-4v4h-4v-8h12zm-32 0H8v4h4v-4zm32-16v4h-4v4h4v4h-8V20h8zM28 4v12h-4v8h-8v4h-4v-8h8v-8h4V8h-4V4h8zM8 20v8H4v-8h4zm8-16v12H4V4h12zm28 0v12H32V4h12zM12 8H8v4h4V8zm28 0h-4v4h4V8z" fill="var(--icon-color,#333)"/>
+    </g>
+</svg>

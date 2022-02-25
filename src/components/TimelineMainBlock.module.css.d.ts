@@ -1,5 +1,6 @@
 declare const styles: {
   readonly "container": string;
+  readonly "timelineGrid": string;
   readonly "timeline": string;
   readonly "iconCircle": string;
   readonly "mainBlock": string;

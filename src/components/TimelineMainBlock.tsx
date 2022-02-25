@@ -20,25 +20,27 @@ export function TimelineMainBlock({ children, header, icon, id, image }: Props) 
 
 	return (
 		<div className={container}>
-			<figure className={styles.imageContainer}>{image}</figure>
-			<div className={styles.timeline}>
-				<div className={styles.iconCircle}>{icon}</div>
+			<div className={styles.timelineGrid}>
+				<figure className={styles.imageContainer}>{image}</figure>
+				<div className={styles.timeline}>
+					<div className={styles.iconCircle}>{icon}</div>
+				</div>
+				<div className={styles.mainBlock}>
+					{header}
+					<button
+						aria-controls={contentId}
+						className="button"
+						id={labelId}
+						onClick={() => setOpen(open => !open)}
+						type="button"
+					>
+						{open ? 'Vähempi' : 'Enempi'}
+					</button>
+				</div>
+				<div aria-labelledby={labelId} className={styles.accordion}>
+					<Animate open={open}>{children}</Animate>
+				</div>
 			</div>
-			<div className={styles.mainBlock}>
-				{header}
-				<button
-					aria-controls={contentId}
-					className="button"
-					id={labelId}
-					onClick={() => setOpen(open => !open)}
-					tabIndex={0}
-				>
-					{open ? 'Vähempi' : 'Enempi'}
-				</button>
-			</div>
-			<div aria-labelledby={labelId} className={styles.accordion}>
-				<Animate open={open}>{children}</Animate>
-			</div>
-		</div>
+		</div >
 	)
 }

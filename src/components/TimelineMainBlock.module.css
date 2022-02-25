@@ -1,11 +1,17 @@
 .container {
+	background: white;
+	margin: 0 -1rem;
+	transition: background-color 250ms ease-in-out;
+}
+
+.timelineGrid {
 	display: grid;
 	grid-template-areas:
 		'timeline image'
 		'timeline content'
 		'timeline accordion';
 	grid-template-columns: 2rem 1fr;
-	margin: 0 -1rem;
+	margin: auto;
 	max-width: 80rem;
 }
 
@@ -80,22 +86,18 @@
 	grid-area: accordion;
 }
 
-.container label {
-	user-select: none;
-}
-
 .containerOpen {
 	background-color: var(--color-grey40);
 }
 
 @media (min-width: 375px) {
-	.container {
+	.timelineGrid {
 		grid-template-columns: 4rem 1fr;
 	}
 }
 
 @media (min-width: 768px) {
-	.container {
+	.timelineGrid {
 		grid-template-areas: 'image timeline content' '. timeline accordion';
 		grid-template-columns: 20rem 32px 1fr;
 		margin: auto;
@@ -107,7 +109,7 @@
 }
 
 @media (min-width: 1024px) {
-	.container {
+	.timelineGrid {
 		grid-template-columns: 30rem 32px 1fr;
 	}
 }
