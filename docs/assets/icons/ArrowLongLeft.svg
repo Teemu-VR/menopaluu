@@ -1,0 +1,6 @@
+<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" id="icon">
+    <g fill="none" fill-rule="evenodd">
+        <path d="M0 0h48v48H0z"/>
+        <path d="M46 26v-4H9.657l5.404-5.403a2.5 2.5 0 000-3.536L14 12 2 24l12 12 1.061-1.061a2.5 2.5 0 000-3.535L9.657 26H46z" fill="var(--icon-color,#333)"/>
+    </g>
+</svg>
