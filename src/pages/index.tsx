@@ -16,7 +16,7 @@ export function Article() {
 			<TimelineMainBlock
 				id="eka-iso-juttu"
 				icon={<TrainDetailedIcon />}
-				image={<div style={{ width: '20rem', height: '15rem', background: 'black' }} />}
+				image={<img alt="" src="/images/second-daily-pippin.jpg" height="499" width="888" />}
 				header={
 					<>
 						<h2>Testausta</h2>
